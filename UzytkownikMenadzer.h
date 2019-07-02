@@ -9,6 +9,8 @@
 
 #include "Uzytkownik.h"
 #include "PlikZUzytkownikami.h"
+#include "MetodyPomocnicze.h"
+
 using namespace std;
 
 class UzytkownikMenadzer
@@ -23,10 +25,11 @@ class UzytkownikMenadzer
     PlikZUzytkownikami plikZUzytkownikami;
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
 public:
+    UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
     void wczytajUzytkownikowZPliku();
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-
+    int logowanieUzytkownika();
 
 };
 
