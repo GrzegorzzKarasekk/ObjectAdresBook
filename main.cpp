@@ -7,10 +7,10 @@ int main()
 {
     int idZalogowanegoUzytkownika = 0;
     int idOstatniegoAdresata = 0;
-    int idUsunietegoAdresata = 0;
+    //int idUsunietegoAdresata = 0;
     char wybor;
 
-    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt");
+    KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
 
     while (true)
     {
@@ -37,20 +37,22 @@ int main()
         }
         else
         {
-            /*
-            if (adresaci.empty() == true)
+
+              if (ksiazkaAdresowa.czyWektorjestPusty() == true)
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-                idOstatniegoAdresata = wczytajAdresatowZalogowanegoUzytkownikaZPliku(adresaci, idZalogowanegoUzytkownika);
-            */
+                idOstatniegoAdresata = ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
-/*
+
             switch (wybor)
             {
+
             case '1':
-                idOstatniegoAdresata = dodajAdresata(adresaci, idZalogowanegoUzytkownika, idOstatniegoAdresata);
+                idOstatniegoAdresata = ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
                 break;
+/*
             case '2':
                 wyszukajAdresatowPoImieniu(adresaci);
                 break;
@@ -67,15 +69,17 @@ int main()
             case '6':
                 edytujAdresata(adresaci);
                 break;
+
             case '7':
                 zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
                 break;
+*/
             case '8':
                 idZalogowanegoUzytkownika = 0;
-                adresaci.clear();
+                ksiazkaAdresowa.czyscWektor();
                 break;
+
             }
-*/
         }
     }
     return 0;

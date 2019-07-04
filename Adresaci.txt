@@ -1,0 +1,5 @@
+
+1|1|Janko|Muzykant|333 444 555|jm@gmail.com|Bajkowa 1|
+2|1|Tomek|Podbipieta|444 333 222|tp@gmail.com|Bajkowa 2|
+3|2|Jacek|Soplica|555 666 777|js@gmail.com|Bajkowa 3|
+4|3|Henryk|Sienkiewicz|111 222 333|hs@gmail.com|Bajkowa 4|

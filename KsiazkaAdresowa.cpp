@@ -17,6 +17,26 @@ int KsiazkaAdresowa::logowanieUzytkownika()
     return idZalogowanegoUzytkownika;
 }
 
+int KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+{
+    idOstatniegoAdresata = adresatMenadzer.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+    return idOstatniegoAdresata;
+}
+void KsiazkaAdresowa::czyscWektor()
+{
+    adresatMenadzer.czyscWektor();
+}
+
+bool KsiazkaAdresowa::czyWektorjestPusty()
+{
+    adresatMenadzer.czyWektorJestPusty();
+}
+
+int KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+{
+    adresatMenadzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+}
+
 char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 {
     uzytkownikMenadzer.wybierzOpcjeZMenuUzytkownika();

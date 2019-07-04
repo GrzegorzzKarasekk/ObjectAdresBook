@@ -55,7 +55,7 @@ string MetodyPomocnicze::pobierzLiczbe(string tekst, int pozycjaZnaku)
     return liczba;
 }
 
-int konwersjaStringNaInt(string liczba)
+int MetodyPomocnicze::konwersjaStringNaInt(string liczba)
 {
     int liczbaInt;
     istringstream iss(liczba);

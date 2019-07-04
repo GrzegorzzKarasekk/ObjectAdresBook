@@ -85,7 +85,6 @@ void UzytkownikMenadzer::wczytajUzytkownikowZPliku()
 int UzytkownikMenadzer::logowanieUzytkownika()
 {
     string login = "", haslo = "";
-
     cout << endl << "Podaj login: ";
     login = MetodyPomocnicze::wczytajLinie();
 

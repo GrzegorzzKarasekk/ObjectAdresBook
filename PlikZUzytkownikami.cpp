@@ -34,6 +34,7 @@ bool PlikZUzytkownikami::czyPlikJestPusty()
         return false;
 }
 
+
 string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)
 {
     string liniaZDanymiUzytkownika = "";
