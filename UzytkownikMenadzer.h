@@ -21,6 +21,7 @@ class UzytkownikMenadzer
 
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
+    bool czyPoleJestPuste(string pole);
     bool czyIstniejeLogin(string login);
     PlikZUzytkownikami plikZUzytkownikami;
     Uzytkownik pobierzDaneUzytkownika(string daneJednegoUzytkownikaOddzielonePionowymiKreskami);
@@ -30,6 +31,7 @@ public:
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     int logowanieUzytkownika();
+    char wybierzOpcjeZMenuUzytkownika();
 
 };
 

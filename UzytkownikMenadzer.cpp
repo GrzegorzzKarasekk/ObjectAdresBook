@@ -23,12 +23,15 @@ Uzytkownik UzytkownikMenadzer::podajDaneNowegoUzytkownika()
         login = MetodyPomocnicze::wczytajLinie();
         uzytkownik.ustawLogin(login);
 
-    } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
+    } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true || czyPoleJestPuste(login) == true);
     string haslo;
+    do
+    {
     cout << "Podaj haslo: ";
     haslo = MetodyPomocnicze::wczytajLinie();
     uzytkownik.ustawHaslo(haslo);
 
+    } while (czyPoleJestPuste(haslo) == true);
     return uzytkownik;
 }
 
@@ -38,6 +41,16 @@ int UzytkownikMenadzer::pobierzIdNowegoUzytkownika()
         return 1;
     else
         return uzytkownicy.back().pobierzId() + 1;
+}
+
+bool UzytkownikMenadzer::czyPoleJestPuste(string pole)
+{
+    if(pole == "")
+        {
+            cout << endl << "Pole jest PUSTE!!!" << endl;
+            return true;
+        }
+    return false;
 }
 
 bool UzytkownikMenadzer::czyIstniejeLogin(string login)
@@ -100,4 +113,27 @@ int UzytkownikMenadzer::logowanieUzytkownika()
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
     return 0;
+}
+
+char UzytkownikMenadzer::wybierzOpcjeZMenuUzytkownika()
+{
+    char wybor;
+
+    system("cls");
+    cout << " >>> MENU UZYTKOWNIKA <<<" << endl;
+    cout << "---------------------------" << endl;
+    cout << "1. Dodaj adresata" << endl;
+    cout << "2. Wyszukaj po imieniu" << endl;
+    cout << "3. Wyszukaj po nazwisku" << endl;
+    cout << "4. Wyswietl adresatow" << endl;
+    cout << "5. Usun adresata" << endl;
+    cout << "6. Edytuj adresata" << endl;
+    cout << "---------------------------" << endl;
+    cout << "7. Zmien haslo" << endl;
+    cout << "8. Wyloguj sie" << endl;
+    cout << "---------------------------" << endl;
+    cout << "Twoj wybor: ";
+    wybor = MetodyPomocnicze::wczytajZnak();
+
+    return wybor;
 }
