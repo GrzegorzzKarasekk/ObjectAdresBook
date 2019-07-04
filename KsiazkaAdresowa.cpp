@@ -17,6 +17,19 @@ int KsiazkaAdresowa::logowanieUzytkownika()
     return idZalogowanegoUzytkownika;
 }
 
+
+int KsiazkaAdresowa::dodajAdresata()
+{
+    int idOstatniegoAdresata;
+    idOstatniegoAdresata = adresatMenadzer.dodajAdresata();
+    return idOstatniegoAdresata;
+}
+void KsiazkaAdresowa::czyscWektor()
+{
+    adresatMenadzer.czyscWektor();
+}
+
+
 char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
 {
     uzytkownikMenadzer.wybierzOpcjeZMenuUzytkownika();
