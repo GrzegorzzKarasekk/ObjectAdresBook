@@ -20,8 +20,10 @@ public:
     int  logowanieUzytkownika();
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
-    int  dodajAdresata();
+    int  dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     void czyscWektor();
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    bool czyWektorjestPusty();
 
 };
 
