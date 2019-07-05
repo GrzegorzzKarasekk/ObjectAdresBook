@@ -60,14 +60,14 @@ void AdresatMenadzer::wyswietlWszystkichAdresatow()
         cout << "             >>> ADRESACI <<<" << endl;
         cout << "-----------------------------------------------" << endl;
         for (int i = 0; i < adresaci.size(); i++)
-    {
-        cout << adresaci[i].pobierzId() << endl;
-        cout << adresaci[i].pobierzImie() << endl;
-        cout << adresaci[i].pobierzNazwisko() << endl;
-        cout << adresaci[i].pobierzNumerTelefonu() << endl;
-        cout << adresaci[i].pobierzEmail() << endl;
-        cout << adresaci[i].pobierzAdres() << endl;
-    }
+        {
+            cout << adresaci[i].pobierzId() << endl;
+            cout << adresaci[i].pobierzImie() << endl;
+            cout << adresaci[i].pobierzNazwisko() << endl;
+            cout << adresaci[i].pobierzNumerTelefonu() << endl;
+            cout << adresaci[i].pobierzEmail() << endl;
+            cout << adresaci[i].pobierzAdres() << endl;
+        }
         cout << endl;
     }
     else

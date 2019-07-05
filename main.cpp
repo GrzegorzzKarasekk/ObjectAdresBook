@@ -72,11 +72,10 @@ int main()
                 edytujAdresata(adresaci);
                 break;
 */
- /*
             case '7':
-                zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
                 break;
-*/
+
             case '8':
                 idZalogowanegoUzytkownika = 0;
                 ksiazkaAdresowa.czyscWektor();
