@@ -65,8 +65,8 @@ void AdresatMenadzer::czyscWektor()
     adresaci.clear();
 }
 
-void AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+void AdresatMenadzer::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
 {
-    plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }
 

@@ -17,7 +17,6 @@ int KsiazkaAdresowa::logowanieUzytkownika()
     return idZalogowanegoUzytkownika;
 }
 
-<<<<<<< HEAD
 int KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
 {
     idOstatniegoAdresata = adresatMenadzer.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
@@ -33,9 +32,9 @@ bool KsiazkaAdresowa::czyWektorjestPusty()
     adresatMenadzer.czyWektorJestPusty();
 }
 
-int KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+int KsiazkaAdresowa::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
 {
-    adresatMenadzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    adresatMenadzer.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }
 
 char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
@@ -43,8 +42,6 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     uzytkownikMenadzer.wybierzOpcjeZMenuUzytkownika();
 }
 
-=======
->>>>>>> featureChangePassword
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 {
     char wybor;

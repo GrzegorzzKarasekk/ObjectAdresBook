@@ -17,19 +17,15 @@ public:
     };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-<<<<<<< HEAD
     int  logowanieUzytkownika();
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
     int  dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     void czyscWektor();
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     bool czyWektorjestPusty();
 
-=======
-    int logowanieUzytkownika();
-    char wybierzOpcjeZMenuGlownego();
->>>>>>> featureChangePassword
+
 };
 
 #endif

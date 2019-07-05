@@ -7,11 +7,7 @@ int main()
 {
     int idZalogowanegoUzytkownika = 0;
     int idOstatniegoAdresata = 0;
-<<<<<<< HEAD
     //int idUsunietegoAdresata = 0;
-=======
-    int idUsunietegoAdresata = 0;
->>>>>>> featureChangePassword
     char wybor;
 
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
@@ -39,7 +35,6 @@ int main()
                 break;
             }
         }
-<<<<<<< HEAD
         else
         {
 
@@ -47,7 +42,7 @@ int main()
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-                idOstatniegoAdresata = ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+                idOstatniegoAdresata = ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
@@ -64,9 +59,11 @@ int main()
             case '3':
                 wyszukajAdresatowPoNazwisku(adresaci);
                 break;
+*/
             case '4':
                 wyswietlWszystkichAdresatow(adresaci);
                 break;
+ /*
             case '5':
                 idUsunietegoAdresata = usunAdresata(adresaci);
                 idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
@@ -74,11 +71,11 @@ int main()
             case '6':
                 edytujAdresata(adresaci);
                 break;
-
+*/
             case '7':
                 zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
                 break;
-*/
+
             case '8':
                 idZalogowanegoUzytkownika = 0;
                 ksiazkaAdresowa.czyscWektor();
@@ -87,9 +84,5 @@ int main()
             }
         }
     }
-=======
-    }
-    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
->>>>>>> featureChangePassword
     return 0;
 }

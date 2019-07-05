@@ -10,3 +10,5 @@
 11|1|Franek|Maniek|555 444 333|fm@gmail.com|Bajkowa 11, 00-000 Bajkolandia|
 12|2|Magda|Modnicka|333 222 111|mm@gmail.com|Bajkowa 12, 00-000 Bajkolandia|
 13|3|Magda|Ziobro|333 222 111|mz@gmail.com|Bajkowa 13, 00-000 Bajkolandia|
+14|1|Franek|Dolas|444 333 222|fd@gmail.com|Bajkowa 14, 00-000 Bajkolandia|
+15|4|Grzegorz|Niewierny|444 555 666|gn@gmail.com|Bajkowa 15, 00-000 Bajkolandia|
