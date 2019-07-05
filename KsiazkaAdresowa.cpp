@@ -17,6 +17,7 @@ int KsiazkaAdresowa::logowanieUzytkownika()
     return idZalogowanegoUzytkownika;
 }
 
+<<<<<<< HEAD
 int KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
 {
     idOstatniegoAdresata = adresatMenadzer.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
@@ -42,6 +43,8 @@ char KsiazkaAdresowa::wybierzOpcjeZMenuUzytkownika()
     uzytkownikMenadzer.wybierzOpcjeZMenuUzytkownika();
 }
 
+=======
+>>>>>>> featureChangePassword
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 {
     char wybor;

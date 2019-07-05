@@ -7,7 +7,11 @@ int main()
 {
     int idZalogowanegoUzytkownika = 0;
     int idOstatniegoAdresata = 0;
+<<<<<<< HEAD
     //int idUsunietegoAdresata = 0;
+=======
+    int idUsunietegoAdresata = 0;
+>>>>>>> featureChangePassword
     char wybor;
 
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
@@ -35,6 +39,7 @@ int main()
                 break;
             }
         }
+<<<<<<< HEAD
         else
         {
 
@@ -82,5 +87,9 @@ int main()
             }
         }
     }
+=======
+    }
+    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
+>>>>>>> featureChangePassword
     return 0;
 }
