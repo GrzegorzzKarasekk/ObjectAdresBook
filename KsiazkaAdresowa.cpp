@@ -45,6 +45,10 @@ void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
     adresatMenadzer.wyswietlWszystkichAdresatow();
 }
 
+void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
+{
+    uzytkownikMenadzer.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+}
 char KsiazkaAdresowa::wybierzOpcjeZMenuGlownego()
 {
     char wybor;

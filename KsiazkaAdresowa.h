@@ -17,11 +17,7 @@ public:
     };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-<<<<<<< HEAD
-    int  logowanieUzytkownika();
-=======
     int  logowanieUzytkownika(int idZalogowanegoUzytkownika);
->>>>>>> featureShowThePeople
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
     int  dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
@@ -29,13 +25,7 @@ public:
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     bool czyWektorjAdresatowestPusty();
     void wyswietlWszystkichAdresatow();
-
-
-<<<<<<< HEAD
-    int logowanieUzytkownika();
-    char wybierzOpcjeZMenuGlownego();
-=======
->>>>>>> featureShowThePeople
+    void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
 };
 
 #endif
