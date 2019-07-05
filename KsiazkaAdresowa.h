@@ -17,13 +17,14 @@ public:
     };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    int  logowanieUzytkownika();
+    int  logowanieUzytkownika(int idZalogowanegoUzytkownika);
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
     int  dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     void czyscWektor();
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
-    bool czyWektorjestPusty();
+    bool czyWektorjAdresatowestPusty();
+    void wyswietlWszystkichAdresatow();
 
 
 };

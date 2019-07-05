@@ -12,3 +12,4 @@
 13|3|Magda|Ziobro|333 222 111|mz@gmail.com|Bajkowa 13, 00-000 Bajkolandia|
 14|1|Franek|Dolas|444 333 222|fd@gmail.com|Bajkowa 14, 00-000 Bajkolandia|
 15|4|Grzegorz|Niewierny|444 555 666|gn@gmail.com|Bajkowa 15, 00-000 Bajkolandia|
+16|5|Grzegorz|Brzeczyszczykiewicz|444 333 222|gb@gmail.com|Bajkowa 16|

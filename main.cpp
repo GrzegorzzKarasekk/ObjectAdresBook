@@ -24,7 +24,7 @@ int main()
                 ksiazkaAdresowa.rejestracjaUzytkownika();
                 break;
             case '2':
-                idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika();
+                idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika(idZalogowanegoUzytkownika);
                 break;
             case '9':
                 exit(0);
@@ -38,7 +38,7 @@ int main()
         else
         {
 
-              if (ksiazkaAdresowa.czyWektorjestPusty() == true)
+              if (ksiazkaAdresowa.czyWektorjAdresatowestPusty() == true)
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
@@ -61,7 +61,7 @@ int main()
                 break;
 */
             case '4':
-                wyswietlWszystkichAdresatow(adresaci);
+                ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
  /*
             case '5':
@@ -72,10 +72,11 @@ int main()
                 edytujAdresata(adresaci);
                 break;
 */
+ /*
             case '7':
                 zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
                 break;
-
+*/
             case '8':
                 idZalogowanegoUzytkownika = 0;
                 ksiazkaAdresowa.czyscWektor();
