@@ -23,12 +23,15 @@ Uzytkownik UzytkownikMenadzer::podajDaneNowegoUzytkownika()
         login = MetodyPomocnicze::wczytajLinie();
         uzytkownik.ustawLogin(login);
 
-    } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
+    } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true || czyPoleJestPuste(login) == true);
     string haslo;
+    do
+    {
     cout << "Podaj haslo: ";
     haslo = MetodyPomocnicze::wczytajLinie();
     uzytkownik.ustawHaslo(haslo);
 
+    } while (czyPoleJestPuste(haslo) == true);
     return uzytkownik;
 }
 
@@ -38,6 +41,16 @@ int UzytkownikMenadzer::pobierzIdNowegoUzytkownika()
         return 1;
     else
         return uzytkownicy.back().pobierzId() + 1;
+}
+
+bool UzytkownikMenadzer::czyPoleJestPuste(string pole)
+{
+    if(pole == "")
+        {
+            cout << endl << "Pole jest PUSTE!!!" << endl;
+            return true;
+        }
+    return false;
 }
 
 bool UzytkownikMenadzer::czyIstniejeLogin(string login)
