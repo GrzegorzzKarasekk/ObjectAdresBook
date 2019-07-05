@@ -17,7 +17,6 @@ int KsiazkaAdresowa::logowanieUzytkownika()
     return idZalogowanegoUzytkownika;
 }
 
-<<<<<<< HEAD
 int KsiazkaAdresowa::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
 {
     idOstatniegoAdresata = adresatMenadzer.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);

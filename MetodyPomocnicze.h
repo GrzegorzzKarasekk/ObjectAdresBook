@@ -13,13 +13,9 @@ public:
     static string konwerjsaIntNaString(int liczba);
     static string wczytajLinie();
     static char wczytajZnak();
-<<<<<<< HEAD
     static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
     static string pobierzLiczbe(string tekst, int pozycjaZnaku);
     static int konwersjaStringNaInt(string liczba);
-
-=======
->>>>>>> featureChangePassword
 };
 
 #endif

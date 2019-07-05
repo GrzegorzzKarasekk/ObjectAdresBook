@@ -17,7 +17,6 @@ public:
     };
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-<<<<<<< HEAD
     int  logowanieUzytkownika();
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
@@ -26,10 +25,8 @@ public:
     int wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     bool czyWektorjestPusty();
 
-=======
     int logowanieUzytkownika();
     char wybierzOpcjeZMenuGlownego();
->>>>>>> featureChangePassword
 };
 
 #endif

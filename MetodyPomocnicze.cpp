@@ -33,7 +33,6 @@ char MetodyPomocnicze::wczytajZnak()
     }
     return znak;
 }
-<<<<<<< HEAD
 
 string MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst)
 {
@@ -64,6 +63,3 @@ int MetodyPomocnicze::konwersjaStringNaInt(string liczba)
 
     return liczbaInt;
 }
-
-=======
->>>>>>> featureChangePassword
