@@ -27,12 +27,11 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
     system("pause");
 }
 
-int PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku()
+int PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adresat> &adresaci,int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
-    vector <Adresat> adresaci;
+    //vector <Adresat> adresaci;
     int idOstatniegoAdresata = 0;
-    int idZalogowanegoUzytkownika = 0;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
     fstream plikTekstowy;

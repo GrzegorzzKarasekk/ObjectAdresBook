@@ -4,4 +4,8 @@ plan/
 AdressBook.*
 Uzytkownicy.txt
 ks-strukt.cpp
+<<<<<<< HEAD
 adresaci.txt
+=======
+Adresaci.txt
+>>>>>>> featureShowThePeople

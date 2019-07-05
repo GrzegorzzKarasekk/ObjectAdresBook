@@ -17,13 +17,13 @@ class AdresatMenadzer
 public:
     //int pobierzIdZalogowanegoUzytkownika();
     //int pobierzIdOstaniegoAdresata();
-    void czyscWektor();
-    bool czyWektorJestPusty();
     AdresatMenadzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
     int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
-    void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-
+    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    void wyswietlWszystkichAdresatow();
+    void czyscWektor();
+    bool czyWektorAdresatowJestPusty();
 };
 
 #endif

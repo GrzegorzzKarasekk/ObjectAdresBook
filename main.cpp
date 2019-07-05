@@ -7,11 +7,7 @@ int main()
 {
     int idZalogowanegoUzytkownika = 0;
     int idOstatniegoAdresata = 0;
-<<<<<<< HEAD
     //int idUsunietegoAdresata = 0;
-=======
-    int idUsunietegoAdresata = 0;
->>>>>>> featureChangePassword
     char wybor;
 
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
@@ -28,7 +24,7 @@ int main()
                 ksiazkaAdresowa.rejestracjaUzytkownika();
                 break;
             case '2':
-                idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika();
+                idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika(idZalogowanegoUzytkownika);
                 break;
             case '9':
                 exit(0);
@@ -39,15 +35,14 @@ int main()
                 break;
             }
         }
-<<<<<<< HEAD
         else
         {
 
-              if (ksiazkaAdresowa.czyWektorjestPusty() == true)
+              if (ksiazkaAdresowa.czyWektorjAdresatowestPusty() == true)
                 // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
                 // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
                 // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-                idOstatniegoAdresata = ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
+                idOstatniegoAdresata = ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
@@ -64,9 +59,11 @@ int main()
             case '3':
                 wyszukajAdresatowPoNazwisku(adresaci);
                 break;
+*/
             case '4':
-                wyswietlWszystkichAdresatow(adresaci);
+                ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
+ /*
             case '5':
                 idUsunietegoAdresata = usunAdresata(adresaci);
                 idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
@@ -74,7 +71,8 @@ int main()
             case '6':
                 edytujAdresata(adresaci);
                 break;
-
+*/
+ /*
             case '7':
                 zmianaHaslaZalogowanegoUzytkownika(uzytkownicy, idZalogowanegoUzytkownika);
                 break;
@@ -87,9 +85,5 @@ int main()
             }
         }
     }
-=======
-    }
-    //ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
->>>>>>> featureChangePassword
     return 0;
 }
