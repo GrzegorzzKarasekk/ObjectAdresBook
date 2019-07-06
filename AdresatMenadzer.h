@@ -15,8 +15,7 @@ class AdresatMenadzer
     PlikZAdresatami plikZAdresatami;
 
 public:
-    //int pobierzIdZalogowanegoUzytkownika();
-    //int pobierzIdOstaniegoAdresata();
+ 
     AdresatMenadzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {};
     int dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
