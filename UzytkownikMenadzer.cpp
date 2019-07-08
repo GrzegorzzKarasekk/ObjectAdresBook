@@ -76,7 +76,8 @@ void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
         cout << uzytkownicy[i].pobierzHaslo() << endl;
     }
 }
-int UzytkownikMenadzer::logowanieUzytkownika()
+
+void  UzytkownikMenadzer::logowanieUzytkownika()
 {
     string login = "", haslo = "";
     cout << endl << "Podaj login: ";
@@ -93,22 +94,23 @@ int UzytkownikMenadzer::logowanieUzytkownika()
 
                 if (uzytkownicy[i].pobierzHaslo() == haslo)
                 {
+                    idZalogowanegoUzytkownika = uzytkownicy[i].pobierzId();
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return uzytkownicy[i].pobierzId();
+                    return;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
-            return 0;
+            return;
         }
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
-    return 0;
+    return;
 }
 
-void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika)
+void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
 {
     string noweHaslo = "";
     cout << "Podaj nowe haslo: ";
@@ -124,6 +126,36 @@ void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUz
         }
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
+
+bool UzytkownikMenadzer::czyUzytkownikJestZalogowany()
+{
+    if (idZalogowanegoUzytkownika > 0)
+        return true;
+    else
+        return false;
+}
+
+bool UzytkownikMenadzer::czyWektorUzytkownikowJestPusty()
+{
+    if(uzytkownicy.empty() == true)
+        {
+            cout << "BRAK ZAREJESTROWANYCH UZYTKOWNIKOW :(" << endl;
+            system("pause");
+            return true;
+        }
+    else
+        return false;
+}
+
+int UzytkownikMenadzer::pobierzIdZalogowanegoUzytkownika()
+{
+    return idZalogowanegoUzytkownika;
+}
+
+void UzytkownikMenadzer::wylogujUzytkownika()
+{
+    idZalogowanegoUzytkownika = 0;
 }
 
 char UzytkownikMenadzer::wybierzOpcjeZMenuUzytkownika()

@@ -5,16 +5,13 @@ using namespace std;
 
 int main()
 {
-    int idZalogowanegoUzytkownika = 0;
-    int idOstatniegoAdresata = 0;
-    //int idUsunietegoAdresata = 0;
     char wybor;
 
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt", "Adresaci.txt");
 
     while (true)
     {
-        if (idZalogowanegoUzytkownika == 0)
+        if (ksiazkaAdresowa.czyUzytkownikJestZalogowany() == false)
         {
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuGlownego();
 
@@ -24,7 +21,10 @@ int main()
                 ksiazkaAdresowa.rejestracjaUzytkownika();
                 break;
             case '2':
-                idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika(idZalogowanegoUzytkownika);
+                if (ksiazkaAdresowa.czyWektorUzytkownikowJestPusty() == true)
+                    break;
+                else
+                ksiazkaAdresowa.logowanieUzytkownika();
                 break;
             case '9':
                 exit(0);
@@ -37,20 +37,13 @@ int main()
         }
         else
         {
-
-              if (ksiazkaAdresowa.czyWektorjAdresatowestPusty() == true)
-                // Pobieramy idOstatniegoAdresata, po to aby zoptymalizowac program.
-                // Dzieki temu, kiedy uztykwonik bedzie dodawal nowego adresata
-                // to nie bedziemy musieli jeszcze raz ustalac idOstatniegoAdresata
-                idOstatniegoAdresata = ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-
             wybor = ksiazkaAdresowa.wybierzOpcjeZMenuUzytkownika();
 
             switch (wybor)
             {
 
             case '1':
-                idOstatniegoAdresata = ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+                ksiazkaAdresowa.dodajAdresata();
                 break;
 /*
             case '2':
@@ -73,12 +66,11 @@ int main()
                 break;
 */
             case '7':
-                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika(idZalogowanegoUzytkownika);
+                ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
 
             case '8':
-                idZalogowanegoUzytkownika = 0;
-                ksiazkaAdresowa.czyscWektor();
+                ksiazkaAdresowa.wylogujUzytkownika();
                 break;
 
             }
@@ -86,3 +78,14 @@ int main()
     }
     return 0;
 }
+/*
+#include "AdresatMenadzer.h"
+
+int main()
+{
+    AdresatMenadzer adresatMenadzer("Adresaci2.txt",2);
+    adresatMenadzer.wyswietlWszystkichAdresatow();
+    adresatMenadzer.dodajAdresata();
+    adresatMenadzer.wyswietlWszystkichAdresatow();
+}
+*/
