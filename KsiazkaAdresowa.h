@@ -10,21 +10,31 @@ using namespace std;
 class KsiazkaAdresowa
 {
     UzytkownikMenadzer uzytkownikMenadzer;
-    AdresatMenadzer adresatMenadzer;
+    AdresatMenadzer *adresatMenadzer;
+    const string NAZWA_PLIKU_Z_ADRESATAMI;
 public:
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami): uzytkownikMenadzer(nazwaPlikuZUzytkownikami), adresatMenadzer(nazwaPlikuZAdresatami){
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami)
+    : uzytkownikMenadzer(nazwaPlikuZUzytkownikami), NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
+    {
+        adresatMenadzer = NULL;
     };
+    ~KsiazkaAdresowa()
+    {
+        delete adresatMenadzer;
+        adresatMenadzer = NULL;
+    }
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    int  logowanieUzytkownika(int idZalogowanegoUzytkownika);
+    void logowanieUzytkownika();
     char wybierzOpcjeZMenuGlownego();
     char wybierzOpcjeZMenuUzytkownika();
-    int  dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);
-    void czyscWektor();
-    int wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    void dodajAdresata();
+    void wylogujUzytkownika();
+    bool czyWektorUzytkownikowJestPusty();
     bool czyWektorjAdresatowestPusty();
     void wyswietlWszystkichAdresatow();
-    void zmianaHaslaZalogowanegoUzytkownika(int idZalogowanegoUzytkownika);
+    bool czyUzytkownikJestZalogowany();
+    void zmianaHaslaZalogowanegoUzytkownika();
 };
 
 #endif

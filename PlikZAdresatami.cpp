@@ -1,6 +1,6 @@
 #include "PlikZAdresatami.h"
 
-void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
+bool PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
 {
     string liniaZDanymiAdresata = "";
     fstream plikTekstowy;
@@ -18,20 +18,22 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
         {
             plikTekstowy << endl << liniaZDanymiAdresata ;
         }
+        idOstatniegoAdresata++;
+        plikTekstowy.close();
+        return true;
     }
     else
     {
         cout << "Nie udalo sie otworzyc pliku i zapisac w nim danych." << endl;
+        system("pause");
+        return false;
     }
-    plikTekstowy.close();
-    system("pause");
 }
 
-int PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adresat> &adresaci,int idZalogowanegoUzytkownika)
+vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika)
 {
+    vector <Adresat> adresaci;
     Adresat adresat;
-    //vector <Adresat> adresaci;
-    int idOstatniegoAdresata = 0;
     string daneJednegoAdresataOddzielonePionowymiKreskami = "";
     string daneOstaniegoAdresataWPliku = "";
     fstream plikTekstowy;
@@ -57,10 +59,8 @@ int PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(vector <Adres
     if (daneOstaniegoAdresataWPliku != "")
     {
         idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
-        return idOstatniegoAdresata;
     }
-    else
-        return 0;
+    return adresaci;
 }
 
 bool PlikZAdresatami::czyPlikJestPusty(fstream &plikTekstowy)
@@ -72,6 +72,10 @@ bool PlikZAdresatami::czyPlikJestPusty(fstream &plikTekstowy)
         return false;
 }
 
+int PlikZAdresatami::pobierzIdOstatniegoAdresata()
+{
+    return idOstatniegoAdresata;
+}
 
 
 string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat)
