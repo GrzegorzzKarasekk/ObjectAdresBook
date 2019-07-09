@@ -45,26 +45,17 @@ int main()
             case '1':
                 ksiazkaAdresowa.dodajAdresata();
                 break;
-/*
             case '2':
-                wyszukajAdresatowPoImieniu(adresaci);
                 break;
             case '3':
-                wyszukajAdresatowPoNazwisku(adresaci);
                 break;
-*/
             case '4':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
- /*
             case '5':
-                idUsunietegoAdresata = usunAdresata(adresaci);
-                idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
                 break;
             case '6':
-                edytujAdresata(adresaci);
                 break;
-*/
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
@@ -78,14 +69,3 @@ int main()
     }
     return 0;
 }
-/*
-#include "AdresatMenadzer.h"
-
-int main()
-{
-    AdresatMenadzer adresatMenadzer("Adresaci2.txt",2);
-    adresatMenadzer.wyswietlWszystkichAdresatow();
-    adresatMenadzer.dodajAdresata();
-    adresatMenadzer.wyswietlWszystkichAdresatow();
-}
-*/
