@@ -45,47 +45,37 @@ int main()
             case '1':
                 ksiazkaAdresowa.dodajAdresata();
                 break;
-/*
             case '2':
-                wyszukajAdresatowPoImieniu(adresaci);
+                cout << endl << "Funkcja chwilowo niedostepna. Za utrudnienia Przepraszamy :(" << endl << endl;
+                system("pause");
                 break;
             case '3':
-                wyszukajAdresatowPoNazwisku(adresaci);
+                cout << endl << "Funkcja chwilowo niedostepna. Za utrudnienia Przepraszamy :(" << endl << endl;
+                system("pause");
                 break;
-*/
             case '4':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
- /*
             case '5':
-                idUsunietegoAdresata = usunAdresata(adresaci);
-                idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
+                cout << endl << "Funkcja chwilowo niedostepna. Za utrudnienia Przepraszamy :(" << endl << endl;
+                system("pause");
                 break;
             case '6':
-                edytujAdresata(adresaci);
+                cout << endl << "Funkcja chwilowo niedostepna. Za utrudnienia Przepraszamy :(" << endl << endl;
+                system("pause");
                 break;
-*/
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
-
             case '8':
                 ksiazkaAdresowa.wylogujUzytkownika();
                 break;
-
+            default:
+                cout << endl << "Nie ma takiej opcji w menu uzytkownika." << endl << endl;
+                system("pause");
+                break;
             }
         }
     }
     return 0;
 }
-/*
-#include "AdresatMenadzer.h"
-
-int main()
-{
-    AdresatMenadzer adresatMenadzer("Adresaci2.txt",2);
-    adresatMenadzer.wyswietlWszystkichAdresatow();
-    adresatMenadzer.dodajAdresata();
-    adresatMenadzer.wyswietlWszystkichAdresatow();
-}
-*/
