@@ -46,14 +46,10 @@ int main()
                 ksiazkaAdresowa.dodajAdresata();
                 break;
             case '2':
-                /*cout << endl << "Funkcja chwilowo niedostepna. Za utrudnienia Przepraszamy :(" << endl << endl;
-                system("pause");
-                */
                 ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
                 break;
             case '3':
-                cout << endl << "Funkcja chwilowo niedostepna. Za utrudnienia Przepraszamy :(" << endl << endl;
-                system("pause");
+                ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
                 break;
             case '4':
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();

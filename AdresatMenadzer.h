@@ -34,6 +34,7 @@ public:
     bool czyWektorAdresatowJestPusty();
     void wyswietlWszystkichAdresatow();
     void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 
 };
 
