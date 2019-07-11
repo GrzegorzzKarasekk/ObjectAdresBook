@@ -51,6 +51,57 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata()
     return adresat;
 }
 
+void AdresatMenadzer::wyszukajAdresatowPoImieniu()
+{
+    string imiePoszukiwanegoAdresata = "";
+    int iloscAdresatow = 0;
+
+    system("cls");
+    if (!adresaci.empty())
+    {
+        cout << ">>> WYSZUKIWANIE ADRESATOW O IMIENIU <<<" << endl << endl;
+
+        cout << "Wyszukaj adresatow o imieniu: ";
+        imiePoszukiwanegoAdresata = MetodyPomocnicze::wczytajLinie();
+        imiePoszukiwanegoAdresata = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(imiePoszukiwanegoAdresata);
+
+        for (int i = 0; i < adresaci.size(); i++)
+        {
+            if (adresaci[i].pobierzImie() == imiePoszukiwanegoAdresata)
+            {
+                wyswietlDaneAdresata(adresaci[i]);
+                iloscAdresatow++;
+            }
+        }
+        wyswietlIloscWyszukanychAdresatow(iloscAdresatow);
+    }
+    else
+    {
+        cout << endl << "Ksiazka adresowa jest pusta" << endl << endl;
+    }
+    cout << endl;
+    system("pause");
+}
+
+void AdresatMenadzer::wyswietlDaneAdresata(Adresat adresaci)
+{
+    cout << endl << "Id:                 " << adresaci.pobierzId() << endl;
+    cout << "Imie:               " << adresaci.pobierzImie() << endl;
+    cout << "Nazwisko:           " << adresaci.pobierzNazwisko() << endl;
+    cout << "Numer telefonu:     " << adresaci.pobierzNumerTelefonu() << endl;
+    cout << "Email:              " << adresaci.pobierzEmail() << endl;
+    cout << "Adres:              " << adresaci.pobierzAdres() << endl;
+}
+
+void AdresatMenadzer::wyswietlIloscWyszukanychAdresatow(int iloscAdresatow)
+{
+    if (iloscAdresatow == 0)
+        cout << endl << "W ksiazce adresowej nie ma adresatow z tymi danymi." << endl;
+    else
+        cout << endl << "Ilosc adresatow w ksiazce adresowej wynosi: " << iloscAdresatow << endl << endl;
+}
+
+
 void AdresatMenadzer::wyswietlWszystkichAdresatow()
 {
     system("cls");

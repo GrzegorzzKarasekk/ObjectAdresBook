@@ -20,6 +20,7 @@ class AdresatMenadzer
 
     Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresaci);
+    void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
 
 public:
 
@@ -32,6 +33,8 @@ public:
     void czyscWektor();
     bool czyWektorAdresatowJestPusty();
     void wyswietlWszystkichAdresatow();
+    void wyszukajAdresatowPoImieniu();
+
 };
 
 #endif

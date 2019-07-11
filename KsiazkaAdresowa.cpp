@@ -66,10 +66,14 @@ void KsiazkaAdresowa::wylogujUzytkownika()
     adresatMenadzer = NULL;
 }
 
-
 bool KsiazkaAdresowa::czyWektorjAdresatowestPusty()
 {
     return adresatMenadzer->czyWektorAdresatowJestPusty();
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
+{
+    return adresatMenadzer->wyszukajAdresatowPoImieniu();
 }
 
 void KsiazkaAdresowa::wyswietlWszystkichAdresatow()
