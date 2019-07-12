@@ -55,12 +55,13 @@ int main()
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '5':
-                cout << endl << "Funkcja chwilowo niedostepna. Za utrudnienia Przepraszamy :(" << endl << endl;
+                /*cout << endl << "Funkcja chwilowo niedostepna. Za utrudnienia Przepraszamy :(" << endl << endl;
                 system("pause");
+                */
+
                 break;
             case '6':
-                cout << endl << "Funkcja chwilowo niedostepna. Za utrudnienia Przepraszamy :(" << endl << endl;
-                system("pause");
+                ksiazkaAdresowa.edytujAdresata();
                 break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();

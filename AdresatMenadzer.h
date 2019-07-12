@@ -9,7 +9,6 @@
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
 #include "PlikZAdresatami.h"
-
 using namespace std;
 
 class AdresatMenadzer
@@ -21,6 +20,10 @@ class AdresatMenadzer
     Adresat podajDaneNowegoAdresata();
     void wyswietlDaneAdresata(Adresat adresaci);
     void wyswietlIloscWyszukanychAdresatow(int iloscAdresatow);
+    int podajIdWybranegoAdresata();
+    char wybierzOpcjeZMenuEdycja();
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
+    void edytujWybranaLinieWPlikuAdresaci(Adresat adresat);
 
 public:
 
@@ -35,6 +38,7 @@ public:
     void wyswietlWszystkichAdresatow();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
+    void edytujAdresata();
 
 };
 
