@@ -24,7 +24,7 @@ class AdresatMenadzer
     char wybierzOpcjeZMenuEdycja();
     void zaktualizujDaneWybranegoAdresata(Adresat adresat);
     void edytujWybranaLinieWPlikuAdresaci(Adresat adresat);
-
+    void usunWybranegoAdresataZPliku(Adresat adresat);
 public:
 
     AdresatMenadzer(string nazwaPlikuZAdresatami, int idZalogowanegoUzytkownika)
@@ -39,6 +39,7 @@ public:
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();
     void edytujAdresata();
+    void usunAdresata();
 
 };
 

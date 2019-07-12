@@ -55,10 +55,7 @@ int main()
                 ksiazkaAdresowa.wyswietlWszystkichAdresatow();
                 break;
             case '5':
-                /*cout << endl << "Funkcja chwilowo niedostepna. Za utrudnienia Przepraszamy :(" << endl << endl;
-                system("pause");
-                */
-
+                ksiazkaAdresowa.usunAdresata();
                 break;
             case '6':
                 ksiazkaAdresowa.edytujAdresata();
