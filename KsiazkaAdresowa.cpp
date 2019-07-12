@@ -96,6 +96,11 @@ void KsiazkaAdresowa::edytujAdresata()
     adresatMenadzer->edytujAdresata();
 }
 
+void KsiazkaAdresowa::usunAdresata()
+{
+    adresatMenadzer->usunAdresata();
+}
+
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 {
     uzytkownikMenadzer.zmianaHaslaZalogowanegoUzytkownika();
