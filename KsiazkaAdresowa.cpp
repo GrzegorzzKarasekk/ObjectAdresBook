@@ -91,6 +91,11 @@ bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
     uzytkownikMenadzer.czyUzytkownikJestZalogowany();
 }
 
+void KsiazkaAdresowa::edytujAdresata()
+{
+    adresatMenadzer->edytujAdresata();
+}
+
 void KsiazkaAdresowa::zmianaHaslaZalogowanegoUzytkownika()
 {
     uzytkownikMenadzer.zmianaHaslaZalogowanegoUzytkownika();
