@@ -13,7 +13,7 @@ void AdresatMenadzer::dodajAdresata()
         cout << "Nowy adresat zostal dodany" << endl;
     else
         cout << "Blad. Nie udalo sie dodac nowego adresata do pliku" << endl;
-        system("pause");
+    system("pause");
 }
 
 
@@ -97,7 +97,7 @@ void AdresatMenadzer::wyszukajAdresatowPoNazwisku()
         nazwiskoPoszukiwanegoAdresata = MetodyPomocnicze::wczytajLinie();
         nazwiskoPoszukiwanegoAdresata = MetodyPomocnicze::zamienPierwszaLitereNaDuzaAPozostaleNaMale(nazwiskoPoszukiwanegoAdresata);
 
-       for(int i = 0; i < adresaci.size(); i++)
+        for(int i = 0; i < adresaci.size(); i++)
         {
             if (adresaci[i].pobierzNazwisko() == nazwiskoPoszukiwanegoAdresata)
             {
@@ -105,7 +105,7 @@ void AdresatMenadzer::wyszukajAdresatowPoNazwisku()
                 iloscAdresatow++;
             }
         }
-         wyswietlIloscWyszukanychAdresatow(iloscAdresatow);
+        wyswietlIloscWyszukanychAdresatow(iloscAdresatow);
     }
     else
     {
@@ -166,7 +166,7 @@ void AdresatMenadzer::edytujAdresata()
     int idEdytowanegoAdresata = 0;
     int numerLiniiEdytowanegoAdresata = 0;
     string liniaZDanymiAdresata = "";
-    string imie, nazwisko, numerTelefonu, email, adres;
+    string imie = " ", nazwisko = " ", numerTelefonu = "", email = "", adres = "";
 
     cout << ">>> EDYCJA WYBRANEGO ADRESATA <<<" << endl << endl;
     idEdytowanegoAdresata = podajIdWybranegoAdresata();
@@ -180,7 +180,7 @@ void AdresatMenadzer::edytujAdresata()
         {
             czyIstniejeAdresat = true;
             adresat = adresaci[i];
-            wyswietlDaneAdresata(adresaci[i]);
+            wyswietlDaneAdresata(adresat);
             wybor = wybierzOpcjeZMenuEdycja();
 
             switch (wybor)
@@ -219,14 +219,18 @@ void AdresatMenadzer::edytujAdresata()
                 break;
             case '6':
                 cout << endl << "Powrot do menu uzytkownika" << endl << endl;
+                system("pause");
                 break;
             default:
                 cout << endl << "Nie ma takiej opcji w menu! Powrot do menu uzytkownika." << endl << endl;
+                system("pause");
                 break;
             }
+            break;
         }
     }
-    if (czyIstniejeAdresat == false)
+
+    if(czyIstniejeAdresat == false)
     {
         cout << endl << "Nie ma takiego adresata." << endl << endl;
     }
@@ -262,10 +266,10 @@ char AdresatMenadzer::wybierzOpcjeZMenuEdycja()
 
 void AdresatMenadzer::zaktualizujDaneWybranegoAdresata(Adresat adresat)
 {
-
     edytujWybranaLinieWPlikuAdresaci(adresat);
     czyscWektor();
     adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+
     system("cls");
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
 }

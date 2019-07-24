@@ -94,18 +94,10 @@ void PlikZAdresatami::edytujWybranaLinieWPlikuAdresaci(Adresat adresat)
         {
             if (numerWczytanejLinii == adresat.pobierzId())
             {
-                if (numerWczytanejLinii == 1)
-                    tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami;
-                else
-                    tymczasowyPlikTekstowy << endl;
-                    tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami;
-            }
+                tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami << endl;}
             else
             {
-                if (numerWczytanejLinii == 1)
-                    tymczasowyPlikTekstowy << wczytanaLinia;
-                else
-                    tymczasowyPlikTekstowy << endl << wczytanaLinia;
+                tymczasowyPlikTekstowy << wczytanaLinia << endl;
             }
             numerWczytanejLinii++;
         }
