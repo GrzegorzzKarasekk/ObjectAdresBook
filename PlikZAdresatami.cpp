@@ -85,7 +85,8 @@ void PlikZAdresatami::edytujWybranaLinieWPlikuAdresaci(Adresat adresat)
         {
             if (numerWczytanejLinii == adresat.pobierzId())
             {
-                tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami << endl;}
+                tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami << endl;
+            }
             else
             {
                 tymczasowyPlikTekstowy << wczytanaLinia << endl;
@@ -106,34 +107,35 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(Adresat usuwanyAdresat)
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string wczytanaLinia = "";
     int numerWczytanejLinii = 1;
+    int nrIdAdresataWczytywanejLinii = 0;
 
     odczytywanyPlikTekstowy.open(pobierzNazwePliku().c_str(), ios::in);
     tymczasowyPlikTekstowy.open(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI.c_str(), ios::out | ios::app);
 
     if (odczytywanyPlikTekstowy.good() == true && usuwanyAdresat.pobierzId() != 0)
     {
+
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
         {
-            // Tych przypadkow jest tyle, gdyz chcemy osiagnac taki efekt,
-            // aby na koncu pliku nie bylo pustej linii
-            if (numerWczytanejLinii == usuwanyAdresat.pobierzId()) {}
-            else if (numerWczytanejLinii == 1 && numerWczytanejLinii != usuwanyAdresat.pobierzId())
-                tymczasowyPlikTekstowy << wczytanaLinia;
-            else if (numerWczytanejLinii == 2 && usuwanyAdresat.pobierzId() == 1)
-                tymczasowyPlikTekstowy << wczytanaLinia;
-            else if (numerWczytanejLinii > 2 && usuwanyAdresat.pobierzId() == 1)
-                tymczasowyPlikTekstowy << endl << wczytanaLinia;
-            else if (numerWczytanejLinii > 1 && usuwanyAdresat.pobierzId() != 1)
-                tymczasowyPlikTekstowy << endl << wczytanaLinia;
+            nrIdAdresataWczytywanejLinii = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
+            if (nrIdAdresataWczytywanejLinii == usuwanyAdresat.pobierzId())
+            {
+                ;
+            }
+            else
+            {
+                tymczasowyPlikTekstowy << wczytanaLinia << endl;
+            }
             numerWczytanejLinii++;
         }
-        odczytywanyPlikTekstowy.close();
-        tymczasowyPlikTekstowy.close();
+    odczytywanyPlikTekstowy.close();
+    tymczasowyPlikTekstowy.close();
 
-        usunPlik(pobierzNazwePliku());
-        zmienNazwePliku(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI, pobierzNazwePliku());
+    usunPlik(pobierzNazwePliku());
+    zmienNazwePliku(NAZWA_TYMCZASOWEGO_PLIKU_Z_ADRESATAMI, pobierzNazwePliku());
     }
 }
+
 
 void PlikZAdresatami::usunPlik(string nazwaPlikuZRozszerzeniem)
 {
