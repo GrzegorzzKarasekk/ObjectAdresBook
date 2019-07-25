@@ -303,7 +303,7 @@ void AdresatMenadzer::usunAdresata()
             if (znak == 't')
             {
                 usunWybranegoAdresataZPliku(adresaci[i]);
-                adresaci.erase(hadresaci.begin() + i);
+                adresaci.erase(adresaci.begin() + i);
                 cout << endl << endl << "Wybrany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
             }
