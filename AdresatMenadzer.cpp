@@ -303,8 +303,7 @@ void AdresatMenadzer::usunAdresata()
             if (znak == 't')
             {
                 usunWybranegoAdresataZPliku(adresaci[i]);
-                czyscWektor();
-                adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
+                adresaci.erase(hadresaci.begin() + i);
                 cout << endl << endl << "Wybrany adresat zostal USUNIETY" << endl << endl;
                 system("pause");
             }
