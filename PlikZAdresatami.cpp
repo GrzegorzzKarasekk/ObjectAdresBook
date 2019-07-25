@@ -85,14 +85,19 @@ void PlikZAdresatami::edytujWybranaLinieWPlikuAdresaci(Adresat adresat)
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
         {
             nrIdAdresataWczytywanejLinii = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
-            if (nrIdAdresataWczytywanejLinii == adresat.pobierzId())
-            {
-                tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami << endl;
-            }
-            else
-            {
-                tymczasowyPlikTekstowy << wczytanaLinia << endl;
-            }
+
+            if (numerWczytanejLinii == 1 && nrIdAdresataWczytywanejLinii == adresat.pobierzId())
+                tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami;
+
+            else if (numerWczytanejLinii == 1 && nrIdAdresataWczytywanejLinii != adresat.pobierzId())
+                tymczasowyPlikTekstowy << wczytanaLinia;
+
+            else if (numerWczytanejLinii > 1 && nrIdAdresataWczytywanejLinii == adresat.pobierzId())
+                tymczasowyPlikTekstowy << endl << liniaZDanymiAdresataOddzielonePionowymiKreskami;
+
+            else if (numerWczytanejLinii > 1 && nrIdAdresataWczytywanejLinii != adresat.pobierzId())
+                tymczasowyPlikTekstowy << endl << wczytanaLinia;
+
             numerWczytanejLinii++;
         }
 
@@ -133,7 +138,14 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(Adresat usuwanyAdresat)
                 tymczasowyPlikTekstowy << endl << wczytanaLinia;
             else if (numerWczytanejLinii > 1 && nrIdAdresataWczytywanejLinii != 1)
                 tymczasowyPlikTekstowy << endl << wczytanaLinia;
-            daneOstaniegoAdresataWPliku = wczytanaLinia;
+
+            if(nrIdAdresataWczytywanejLinii == usuwanyAdresat.pobierzId())
+            {
+                ;
+            }
+            else
+                daneOstaniegoAdresataWPliku = wczytanaLinia;
+
             numerWczytanejLinii++;
         }
 
