@@ -139,7 +139,7 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(Adresat usuwanyAdresat)
 
     if (daneOstaniegoAdresataWPliku != "")
     {
-        idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku) - 1;
+        idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku);
     }
 
     odczytywanyPlikTekstowy.close();
