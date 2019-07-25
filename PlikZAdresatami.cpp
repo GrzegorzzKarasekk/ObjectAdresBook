@@ -74,6 +74,7 @@ void PlikZAdresatami::edytujWybranaLinieWPlikuAdresaci(Adresat adresat)
     string liniaZDanymiAdresataOddzielonePionowymiKreskami = zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(adresat);
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string wczytanaLinia = "";
+    int nrIdAdresataWczytywanejLinii = 0;
     int numerWczytanejLinii = 1;
 
     odczytywanyPlikTekstowy.open(pobierzNazwePliku().c_str(), ios::in);
@@ -83,7 +84,8 @@ void PlikZAdresatami::edytujWybranaLinieWPlikuAdresaci(Adresat adresat)
     {
         while (getline(odczytywanyPlikTekstowy, wczytanaLinia))
         {
-            if (numerWczytanejLinii == adresat.pobierzId())
+            nrIdAdresataWczytywanejLinii = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(wczytanaLinia);
+            if (nrIdAdresataWczytywanejLinii == adresat.pobierzId())
             {
                 tymczasowyPlikTekstowy << liniaZDanymiAdresataOddzielonePionowymiKreskami << endl;
             }
@@ -106,6 +108,7 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(Adresat usuwanyAdresat)
 {
     fstream odczytywanyPlikTekstowy, tymczasowyPlikTekstowy;
     string wczytanaLinia = "";
+    string daneOstaniegoAdresataWPliku = "";
     int numerWczytanejLinii = 1;
     int nrIdAdresataWczytywanejLinii = 0;
 
@@ -122,12 +125,23 @@ void PlikZAdresatami::usunWybranegoAdresataZPliku(Adresat usuwanyAdresat)
             {
                 ;
             }
-            else
-            {
-                tymczasowyPlikTekstowy << wczytanaLinia << endl;
-            }
+            else if (numerWczytanejLinii == 1 && numerWczytanejLinii != usuwanyAdresat.pobierzId())
+                tymczasowyPlikTekstowy << wczytanaLinia;
+            else if (numerWczytanejLinii == 2 && usuwanyAdresat.pobierzId() == 1)
+                tymczasowyPlikTekstowy << wczytanaLinia;
+            else if (numerWczytanejLinii > 2 && usuwanyAdresat.pobierzId() == 1)
+                tymczasowyPlikTekstowy << endl << wczytanaLinia;
+            else if (numerWczytanejLinii > 1 && nrIdAdresataWczytywanejLinii != 1)
+                tymczasowyPlikTekstowy << endl << wczytanaLinia;
+            daneOstaniegoAdresataWPliku = wczytanaLinia;
             numerWczytanejLinii++;
         }
+
+    if (daneOstaniegoAdresataWPliku != "")
+    {
+        idOstatniegoAdresata = pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku) - 1;
+    }
+
     odczytywanyPlikTekstowy.close();
     tymczasowyPlikTekstowy.close();
 
